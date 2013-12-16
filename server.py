@@ -76,7 +76,7 @@ def serve_file(environ, start_response):
         yield 'File not found'
 
 sio_server = SocketIOServer(
-    ('', PORT), chat, 
+    ('', 8080), chat, 
     policy_server=False)
 
 print 'Server is running on http://0.0.0.0:' + PORT.__str__()
