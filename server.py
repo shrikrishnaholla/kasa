@@ -15,7 +15,7 @@ public = os.path.abspath(
         os.path.dirname(__file__),
         'public'))
 
-PORT = 8080
+PORT = 8003
 
 class ChatNamespace(BaseNamespace):
     _registry = {}
@@ -76,7 +76,7 @@ def serve_file(environ, start_response):
         yield 'File not found'
 
 sio_server = SocketIOServer(
-    ('', 8080), chat, 
+    ('', PORT), chat, 
     policy_server=False)
 
 print 'Server is running on http://0.0.0.0:' + PORT.__str__()
